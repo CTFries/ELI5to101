@@ -1,0 +1,73 @@
+---
+title: 'DNS: The Internet's Address Book'
+tags:
+  - ELI5
+  - Networking
+  - Internet
+summary: DNS is like a helpful friend who remembers where everything is, making it easy to find websites by their names.
+publishedAt: '2024-04-16'
+modifiedAt: '2024-04-16'
+---
+
+### ELI5
+
+Imagine you have a whole room full of toys. It is very organized, every toy has
+a name and there's so many that is can be hard to remember where they all are.
+When you want to play with a toy, instead of remembering where each toy is in
+the room, you ask you friend. He's very organize and remembers everything, he
+tells you exactly where to find the toy you want to play with!
+
+In the world of computers, internet, and networking, there are billions of
+websites and each one has a very specific group of numbers called an IP Address,
+which is like the toys name. Instead of trying to remember all those numbers, we
+use the Domain Name System or DNS, which is like your friend, to help us find
+computers by their names.
+
+So, when you type a website name into your computer like "www.google.com", your
+computer asks the DNS, "Hey, where can I find this website?" and just like your
+friend, the DNS says "Oh, you can find it at this specific spot", then you
+computer knows how to find the website you want!
+
+### 101
+
+Whether you're navigating the expansive internet or your local network, the
+Domain Name System(DNS) plays a critical role in translating human-friendly
+domain names into computer-friendly IP addresses, simplifying the way we access
+resources and devices.
+
+Imagine yourself in a bustling city, each building with its unique address, much
+like websites on the internet with their IP addresses. Just as google maps helps
+you find your way, DNS acts as the internet's address book, translating
+memorable domain names (like google.com or facebook.com) into the corresponding
+IP addresses.
+
+But DNS isn't confined to the global internet alone; it extends its reach into
+local networks, like those found in homes, offices, or schools. In these
+environments, DNS serves a similar purpose but on a smaller scale.
+
+Within a local network, there's typically a DNS server, often provided by the
+network's router or a dedicated server. This local DNS server maintains a
+database of domain names and their corresponding IP addresses for devices within
+the network.
+
+When a device on the local network wants to communicate with another device by
+name, it sends a query to the local DNS server. This server then checks its
+database for the corresponding IP address and responds accordingly. To improve
+efficiency, DNS servers often cache recent query results, speeding up subsequent
+requests and reducing the need to ask other DNS servers for the same information
+again.
+
+If the local DNS server doesn't have the requested information (for example, if
+a device wants to access a website on the internet), it can ask public DNS
+servers on the internet, if they have the answer they will tell the local DNS,
+which will tell you. If they don't, they will ask another public DNS server and
+continue the chain until resolution.
+
+This local DNS infrastructure not only simplifies the way devices communicate
+within the network but also provides a layer of control and security. Network
+administrators can customize DNS settings, block access to certain websites, and
+ensure efficient resource allocation.
+
+In essence, whether you're navigating the vast expanse of the internet or your
+local network, DNS serves as the backbone, seamlessly translating domain names
+into IP addresses and facilitating smooth communication between devices.
