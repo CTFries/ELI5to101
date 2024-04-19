@@ -7,7 +7,7 @@ const RecentPosts = () => {
   return (
     <details>
       <summary>Recent Posts</summary>
-      <ul className="p-2">
+      <ul className="p-4">
         {posts.slice(0, 5).map((post) => (
           <li key={post.slug}>
             <a href={`/${post.slug}`} className="text-nowrap">
@@ -64,15 +64,14 @@ export function Navbar() {
         <Link href="/" className="btn btn-ghost text-xl">
           ELI5 to 101
         </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex"></div>
-      <div className="navbar-end">
         <ul className="menu menu-horizontal px-1">
           <li>
             <RecentPosts />
           </li>
         </ul>
       </div>
+      <div className="navbar-center hidden lg:flex"></div>
+      <div className="navbar-end"></div>
     </div>
   );
 }

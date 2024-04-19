@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+p, ul > li, ol > li {
+  font-family: Proza Libre;
+}
+
+.badge {
+  font-family: Proza Libre;
+}

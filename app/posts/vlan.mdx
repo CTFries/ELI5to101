@@ -1,0 +1,83 @@
+---
+title: VLANs: Understanding Virtual Networks in a Simple Way
+tags:
+  - Networking
+  - VLAN
+summary: DNS is like a helpful friend who remembers where everything is, making it easy to find websites by their names.
+publishedAt: '2024-04-18'
+modifiedAt: '2024-04-18'
+---
+
+### ELI5
+
+---
+
+Imagine you have a bunch of different colored stickers, like red, blue, and
+green. Now, think about all your toys – you have cars, dolls, and building
+blocks. You can put these colored stickers on each toy to group them together.
+
+Let's say you can put red stickers on all your toy cars, blue stickers on your
+dolls, and green stickers on your building blocks. This way, you know which toys
+belong together, and it's easier to find what you want to play with.
+
+Now, imagine your toys could talk to each other. The cars with red stickers can
+only talk to other cars with red stickers, the dolls with blue stickers can only
+talk to other dolls with blue stickers, and the building blocks with green
+stickers can only talk to other building blocks with green sticker. They can't
+talk to toys with different colored stickers, even though they're all in the
+same room.
+
+In a big computer network, we use something called VLANs, which work just like
+these colored stickers. Instead of putting stickers on toys, we put special
+labels on computers and other devices that need to talk to each other.
+
+By putting the same label on certain computers and devices, we create smaller
+groups within the big network. The computers with the same label can talk to
+each other, but they can't talk to computers with different labels, just like
+how your toys with the same stickers can only talk to each other. This is
+important for keeping computers safe and organized in a big network.
+
+<br />
+<br />
+### 101
+
+---
+
+In computer networking, VLANs (Virtual Local Area Networks) are a way to
+logically divide a large network into smaller, isolated subnetworks. This allows
+network administrators to group devices together based on their function,
+department, or security requirements, regardless of their physical location.
+
+Think of a VLAN as a way to put "labels" or "tags" on devices in a network. Just
+like you might use colored labels to organize files in a filing cabinet, VLANs
+use special labels to group computers and other devices that need to communicate
+with each other.
+
+Each VLAN is assigned a unique number, called a VLAN ID. Devices with the same
+VLAN ID can communicate with each other as if they were on their own separate
+network, even though they are still physically connected to the larger network.
+This helps keep the network organized and secure, as devices in one VLAN cannot
+directly communicate with devices in another VLAN.
+
+However, sometimes devices in different VLANs need to communicate with each
+other. This is where "trunking" comes in. A trunk is like a special connection
+that bridges different VLANs, allowing devices with different VLAN IDs to
+communicate with each other when needed.
+
+When data is sent over a trunk, it gets a special "tag" added to it, which
+includes the VLAN ID. This tag helps the network devices identify which VLAN the
+data belongs to, so it can be routed to the appropriate destination.
+
+Implementing VLANs and trunking offers several benefits for computer networks:
+
+- Improved organization: By grouping devices together based on their purpose or
+  department, the network becomes easier to manage and understand.
+- Enhanced security: Isolating devices into separate VLANs helps prevent
+  unauthorized access and limits the spread of potential security threats.
+- Increasedefficiency: VLANs help reduce unnecessary network traffic, which can
+  improve overall performance and speed.
+- Greater flexibility: As a company grows or changes, VLANs make it easy to
+  reorganize the network without having to physically move devices around.
+
+Essentially, VLANs are a software tool used to segment and protect traffic
+between devices on the same physical infrastructure. By creating these virtual

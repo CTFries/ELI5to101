@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { Cabin_Sketch, Proza_Libre } from "next/font/google";
 import { Navbar } from "./components/nav";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
 import "app/global.css";
+
+const cabinSketch = Cabin_Sketch({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -36,11 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className={cabinSketch.className}>
       <body>
-        <main>
+        <main className="min-h-screen">
           <Navbar />
-          <article className="prose antialiased max-w-5xl min-w-xl mx-auto">
+          <article className="prose p-6 antialiased max-w-5xl min-w-xl mx-auto">
             {children}
           </article>
           <Footer />
