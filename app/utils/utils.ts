@@ -61,7 +61,12 @@ function readMDXFile(filePath) {
 
 function getMDXData(dir) {
   let mdxFiles = getMDXFiles(dir);
-  return mdxFiles.map((file) => {
+  const dateOrdered = mdxFiles.sort((a, b) => {
+    let aDate = readMDXFile(path.join(dir, a)).metadata.publishedAt;
+    let bDate = readMDXFile(path.join(dir, b)).metadata.publishedAt;
+    return new Date(bDate).getTime() - new Date(aDate).getTime();
+  });
+  return dateOrdered.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file));
     let slug = path.basename(file, path.extname(file));
 
