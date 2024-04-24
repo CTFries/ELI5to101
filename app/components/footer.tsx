@@ -9,7 +9,8 @@ export default function Footer() {
         <span className="items-center justify-center">
           <GitHub /> ctfries{" "}
         </span>
-      </Link>
+      </Link>{" "}
+      | &copy; {new Date().getFullYear()}
     </footer>
   );
 }
