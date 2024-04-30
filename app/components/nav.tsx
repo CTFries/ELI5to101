@@ -43,16 +43,16 @@ export function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm bg-base-300 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box text-wrap"
           >
             {
               <li>
-                <a>Recent Posts</a>
                 <ul className="p-2">
                   {posts.slice(0, 5).map((post) => (
                     <li key={post.slug}>
                       <a href={`/${post.slug}`} className="text-nowrap">
-                        {post.metadata.title} - {post.metadata.publishedAt}
+                        {post.metadata.title.split(":", 1)[0]} -{" "}
+                        {post.metadata.publishedAt}
                       </a>
                     </li>
                   ))}
@@ -64,7 +64,7 @@ export function Navbar() {
         <Link href="/" className="btn btn-ghost text-xl">
           ELI5 to 101
         </Link>
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu hidden lg:block menu-md menu-lg menu-horizontal px-1">
           <li>
             <RecentPosts />
           </li>

@@ -1,4 +1,52 @@
+"use client";
+import React from "react";
 export function SuggestionForm() {
+  let captchaAnswer = "";
+  let captchaQuestion = "";
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const question = `What is ${num1} + ${num2}?`;
+    const answer = num1 + num2;
+    captchaQuestion = question;
+    console.log(captchaQuestion);
+    captchaAnswer = answer.toString();
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (event.target.captcha.value !== captchaAnswer) {
+      alert("CAPTCHA answer is incorrect. Please try again.");
+      generateCaptcha();
+      return;
+    }
+    const idea = event.target.idea.value;
+    const tags = event.target.tags.value;
+    const email = event.target.email.value;
+    const name = event.target.name.value;
+    try {
+      const response = await fetch("/api/suggestions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ idea, tags, email, name }),
+      });
+      if (response.ok) {
+        event.target.reset();
+        generateCaptcha();
+        alert("Your suggestion has been submitted successfully!");
+      } else {
+        throw new Error("Failed to submit suggestion");
+      }
+    } catch (error) {
+      console.error("Error storing suggestion:", error);
+      alert(
+        "An error occurred while submitting your suggestion. Please try again.",
+      );
+    }
+  };
+  generateCaptcha();
+
   return (
     <div className="card-body">
       <h2 className="card-title">Submit your idea</h2>
@@ -7,7 +55,7 @@ export function SuggestionForm() {
         in simple terms? Let me know by submitting your idea using the form
         below.
       </p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-control w-full">
           <label className="label" htmlFor="idea">
             <span className="label-text">Your idea*:</span>
@@ -56,6 +104,19 @@ export function SuggestionForm() {
             name="name"
             placeholder="John Doe"
             className="input input-bordered w-full"
+          />
+        </div>
+        <div className="form-control w-full">
+          <label className="label" htmlFor="captcha">
+            <span className="label-text">Answer the math question:</span>
+          </label>
+          <input
+            type="text"
+            id="captcha"
+            name="captcha"
+            placeholder={captchaQuestion}
+            className="input input-bordered w-full"
+            required
           />
         </div>
         <div className="card-actions justify-end mt-6">

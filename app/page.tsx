@@ -52,11 +52,11 @@ export default function Page() {
         simply someone curious about how things work, the "ELI5" approach can
         help you build a solid foundation of understanding and confidence.
       </p>
-      <h2>
+      {/*   <h2>
         Wait, I have an idea! You should do a post on
         [DNS,Git,Cloud,Containers...]
       </h2>
-      <p>
+       <p>
         Do you have a technology concept you'd like me to break down and explain
         in simple terms? I'm always looking for new ideas and suggestions from
         readers. If there's a topic you'd like me to cover in an "ELI5 to 101"
@@ -64,7 +64,7 @@ export default function Page() {
         I'll do my best to create content that addresses your interests and
         helps you understand the concepts you're curious about.
       </p>
-      <SuggestionForm />
+      <SuggestionForm /> */}
     </>
   );
 }

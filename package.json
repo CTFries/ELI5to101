@@ -10,15 +10,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@material-ui/utils": "^4.11.3",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "@prisma/client": "^5.13.0",
     "@tailwindcss/typography": "^0.5.12",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
     "next": "^14.2.2",
     "next-mdx-remote": "^4.4.1",
+    "pg": "^8.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-feather": "^2.0.10",
     "sugar-high": "^0.6.0",
     "theme-change": "^2.5.0",
     "typescript": "^5.4.5"
