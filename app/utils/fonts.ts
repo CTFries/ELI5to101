@@ -1,3 +1,5 @@
+import { Font } from "next/dist/compiled/@vercel/og/satori";
+
 export default async function getFonts(): Promise<Font[]> {
   const [Cabin_Sketch_Bold, Cabin_Sketch_Regular] = await Promise.all([
     fetch(
