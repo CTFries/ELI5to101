@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     (
       <div tw="flex flex-col w-full h-full items-center justify-center bg-[#1f231e] text-[#cdcecd]">
         <div tw="flex flex-col">
-          <h1 tw="flex flex-col text-8xl">ELI5:</h1>
+          <h1 tw="flex flex-col text-8xl">ELI5 to 101</h1>
           <h2 tw="flex flex-col text-6xl">{title}</h2>
         </div>
       </div>
