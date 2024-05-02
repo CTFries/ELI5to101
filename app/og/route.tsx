@@ -1,20 +1,20 @@
 import { ImageResponse } from "next/og";
-
-export function GET(request: Request) {
-  let url = new URL(request.url);
-  let title = url.searchParams.get("title");
-
+import getFonts from "app/utils/fonts";
+export async function GET(request: Request) {
+  const url = new URL(request.url);
+  const title = url.searchParams.get("title");
+  const fonts = await getFonts();
   return new ImageResponse(
     (
-      <div tw="flex flex-col w-full h-full items-center justify-center bg-white">
-        <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
-          <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-left">
-            {title}
-          </h2>
+      <div tw="flex flex-col w-full h-full items-center justify-center bg-[#1f231e] text-[#cdcecd]">
+        <div tw="flex flex-col">
+          <h1 tw="flex flex-col text-8xl">ELI5:</h1>
+          <h2 tw="flex flex-col text-6xl">{title}</h2>
         </div>
       </div>
     ),
     {
+      fonts,
       width: 1200,
       height: 630,
     },
